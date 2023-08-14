@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cards">
+
+        </div>
+        <div class="input_form">
+            <form>
+                <fieldset>
+                    <legend>
+                        Please fill in below details
+                    </legend>
+                    <p class="field">
+                        <label for="title">Title: </label>
+                        <input type="text" name="title" id="title" required>
+                    </p>
+                    <p class="field">
+                        <label for="author">Author: </label>
+                        <input type="text" name="author" id="author" required>
+                    </p>
+                    <p class="field">
+                        <label for="pages">Pages: </label>
+                        <input type="number" name="pages" id="pages" required>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Read?</legend>
+                    <label for="yes">
+                        <input type="radio" id="yes" name="read" value="yes" checked>
+                        Yes
+                    </label>
+                    <label for="no">
+                        <input type="radio" id="no" name="read" value="no">
+                        No
+                    </label>
+                </fieldset>
+                <button type="button">Insert</button>
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
