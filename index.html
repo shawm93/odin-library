@@ -10,7 +10,16 @@
 <body>
     <div class="container">
         <div class="header">
-            <button class="addForm">+</button>
+            <button class="addForm">Add New Book</button>
+            <button class="clearAll">Clear All</button>
+            <h1>My Library</h1>
+        </div>
+        <div class="reading_meter">
+            <div><h3>Total books: <h2 class="book_qty"></h2></h3></div>
+            <div><h3>Total complete books: <h2 class="book_complete_qty"></h2></h3></div>
+            <div><h3>Total incomplete books: <h2 class="book_incomplete_qty"></h2></h3></div>
+            <div><h3>Total pages: <h2 class="page_qty"></h2></h3></div>
+            <div><h3>Total read pages: <h2 class="page_read_qty"></h2></h3></div>
         </div>
         <div class="cards">
         </div>
@@ -49,6 +58,18 @@
             <button type="button" class="addBook">Add Book</button>
             
         </form>
+    </div>
+
+    <div class="delete_form display-hidden">
+        <h2>Are you sure you want to delete this book from your library?</h2>
+        <button type="button" class="no_delete">no</button>
+        <button type="button" class="yes_delete">yes</button>
+    </div>
+
+    <div class="clear_form display-hidden">
+        <h2>Are you sure you want to delete ENTIRE library?</h2>
+        <button type="button" class="no_deleteAll">no</button>
+        <button type="button" class="yes_deleteAll">yes</button>
     </div>
     
     
