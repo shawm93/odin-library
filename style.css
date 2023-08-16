@@ -65,10 +65,6 @@ button:hover {
     margin-top: -10px;
 }
 
-.display-hidden {
-    display: none;
-}
-
 .reading_meter {
     display: flex;
     gap: 1rem;
@@ -126,10 +122,23 @@ button:hover {
     height: 20px;
 }
 
+.field {
+    display: flex;
+    align-items: center;
+}
+
+.input_form fieldset:first-child input {
+    width: 70%;
+}
+
 .input_form label{
     margin-bottom: 1rem;
 }
 
 .input_form fieldset{
     margin-bottom: 0.5rem;
+}
+
+.display-hidden {
+    display: none;
 }

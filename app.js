@@ -100,7 +100,6 @@ function displayUI() {
         container.classList.add("display-hidden");
         delete_form.classList.remove("display-hidden");
         index = Array.from(del_btns).indexOf(del_btn);
-        // console.log(myLibrary.splice(Array.from(del_btns).indexOf(del_btn), Array.from(del_btns).indexOf(del_btn)));
         read_btns = document.querySelectorAll(".read_btn");
         del_btns = document.querySelectorAll(".del_btn");
         card = document.querySelectorAll(".card");
@@ -127,6 +126,17 @@ function displayUI() {
     }));
 }
 
+const resetForm = () => {
+    if (document.querySelector("#no").checked) {
+        document.querySelector("#no").checked = false;
+        document.querySelector("#yes").checked = true;
+    }
+
+    title.value = ``;
+    author.value = ``; 
+    pages.value = ``;
+}
+
 displayUI();
 
 addForm.addEventListener('click', () => {
@@ -142,13 +152,7 @@ clearAll.addEventListener('click', () => {
 cancelForm.addEventListener('click', () => {
     container.classList.remove("display-hidden");
     input_form.classList.add("display-hidden");
-    if (document.querySelector("#no").checked) {
-        document.querySelector("#no").checked = false;
-        document.querySelector("#yes").checked = true;
-    }
-    title.value = ``;
-    author.value = ``; 
-    pages.value = ``;
+    resetForm();
 })
 
 no_delete.addEventListener('click', () => {
@@ -183,20 +187,13 @@ addBook.addEventListener('click', () => {
     } else {
         container.classList.remove("display-hidden");
         input_form.classList.add("display-hidden");
-        let read_value = 1;
 
-        if (document.querySelector("#no").checked) {
-            read_value = 0;
-            document.querySelector("#no").checked = false;
-            document.querySelector("#yes").checked = true;
-        }
+        let read_value = document.querySelector("#no").checked ? 0 : 1;
 
         let newBook = new Book(title.value, author.value, pages.value, read_value);
         newBook.addBookToLibrary();
 
-        title.value = ``;
-        author.value = ``; 
-        pages.value = ``;
+        resetForm();
 
         displayUI();
     }
