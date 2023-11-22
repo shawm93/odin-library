@@ -14,6 +14,7 @@ const yes_delete = document.querySelector(".yes_delete");
 const clear_form = document.querySelector(".clear_form");
 const no_deleteAll = document.querySelector(".no_deleteAll");
 const yes_deleteAll = document.querySelector(".yes_deleteAll");
+const footer = document.querySelector(".site-footer");
 
 const book_qty = document.querySelector(".book_qty")
 const book_complete_qty = document.querySelector(".book_complete_qty")
@@ -26,7 +27,11 @@ let read_btns = document.querySelectorAll(".read_btn");
 let read_ps = document.querySelectorAll(".read_p");
 let card = document.querySelectorAll(".card");
 
-let myLibrary = [new Book ('sdf', 'sdfsd', '100', 1), new Book ('sdf', 'sdfsd', '100', 0)]
+let myLibrary = [new Book ('sdf', 'sdfsd', '100', 1), 
+                new Book ('sdf', 'sdfsd', '100', 0), 
+                new Book ('sdf', 'sdfsd', '100', 0),
+                new Book ('sdf', 'sdfsd', '100', 0),
+                new Book ('sdf', 'sdfsd', '100', 0)]
 
 let index = myLibrary.length - 1
 
@@ -146,23 +151,27 @@ addForm.addEventListener('click', () => {
 
 clearAll.addEventListener('click', () => {
     container.classList.add("display-hidden");
+    footer.classList.add("display-hidden");
     clear_form.classList.remove("display-hidden");
 })
 
 cancelForm.addEventListener('click', () => {
     container.classList.remove("display-hidden");
+    footer.classList.remove("display-hidden");
     input_form.classList.add("display-hidden");
     resetForm();
 })
 
 no_delete.addEventListener('click', () => {
     container.classList.remove("display-hidden");
+    footer.classList.remove("display-hidden");
     delete_form.classList.add("display-hidden");
     index = myLibrary.length - 1;
 })
 
 yes_delete.addEventListener('click', () => {
     container.classList.remove("display-hidden");
+    footer.classList.remove("display-hidden");
     delete_form.classList.add("display-hidden");
     myLibrary = myLibrary.slice(0, index).concat(myLibrary.slice(index+1));
     displayUI();
@@ -170,12 +179,14 @@ yes_delete.addEventListener('click', () => {
 
 no_deleteAll.addEventListener('click', () => {
     container.classList.remove("display-hidden");
+    footer.classList.remove("display-hidden");
     clear_form.classList.add("display-hidden");
     index = myLibrary.length - 1;
 })
 
 yes_deleteAll.addEventListener('click', () => {
     container.classList.remove("display-hidden");
+    footer.classList.remove("display-hidden");
     clear_form.classList.add("display-hidden");
     myLibrary = [];
     displayUI();
